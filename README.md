@@ -32,7 +32,7 @@ Aplikacja dla korepetytorów to zaawansowane narzędzie webowe stworzone w Djang
 
 ## Zabezpieczenia
 
-Django zapewnia wbudowaną ochronę przed atakami CSRF poprzez implementację tokenów CSRF w formularzach, co minimalizuje ryzyko ataków typu Cross-Site Request Forgery. Ponadto, framework chroni przed atakami XSS (Cross-Site Scripting) poprzez odpowiednie sanitowanie danych wprowadzanych przez użytkowników. Django ORM (Object-Relational Mapping) pomaga zminimalizować ryzyko SQL Injection, ponieważ korzysta z abstrakcyjnego API do baz danych, co zapobiega bezpośredniemu wstrzykiwaniu szkodliwego kodu SQL. Dodatkowo, hasła są bezpiecznie przechowywane, używając hashowania SHA256 oraz algorytmu PBKDF2 z solą, co jest zgodne z rekomendacjami NIST i OWASP
+Django zapewnia wbudowaną ochronę przed atakami CSRF poprzez implementację tokenów CSRF w formularzach, co minimalizuje ryzyko ataków typu Cross-Site Request Forgery. Ponadto, framework chroni przed atakami XSS (Cross-Site Scripting) poprzez odpowiednie sanitowanie danych wprowadzanych przez użytkowników. Sesja użytkownika jest ograniczona do 15 minut.Django ORM (Object-Relational Mapping) pomaga zminimalizować ryzyko SQL Injection, ponieważ korzysta z abstrakcyjnego API do baz danych, co zapobiega bezpośredniemu wstrzykiwaniu szkodliwego kodu SQL. Dodatkowo, hasła są bezpiecznie przechowywane, używając hashowania SHA256 oraz algorytmu PBKDF2 z solą, co jest zgodne z rekomendacjami NIST i OWASP
 
 ## Instalacja i Uruchomienie
 
