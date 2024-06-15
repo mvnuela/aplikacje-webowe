@@ -1,0 +1,115 @@
+.create_group {
+    margin: 10vh auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 6px black;
+    background-color: white;
+    max-width: 600px;
+}
+
+.create_group h1 {
+    margin-top: 2vh;
+}
+
+.create_group form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 2vw;
+}
+
+.create_group form input,
+.create_group form label,
+.create_group form select {
+    width: 70%;
+}
+
+.create_group form label {
+    font-weight: bold;
+    margin: 3vh 0 1vh;
+}
+
+.create_group form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create_group form button :hover,
+.create_group form button .active {
+    background-color: #28a74599;
+}
+
+.create_group form input,
+.create_group form select {
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.create_group form input:focus,
+.create_group form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+@media (min-width: 1024px) {
+    .create_group form input {
+        width: 50%;
+    }
+}
+
+.select_students {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.select_students div {
+    width: 45%;
+}
+
+.select_students div button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.holder	{
+  width:200px;
+  float:left;
+  margin-right: 20px;
+}
+
+#add, #remove	{
+  display:block;
+  text-decoration: none;
+  text-align: center;
+  border:1px solid #ccc;
+  background:#eee;
+  padding:10px;
+}
+
+select	{
+  width:100%;
+  padding:5px;
+  height:300px;
+}
+
+option	{
+  padding:10px;
+}

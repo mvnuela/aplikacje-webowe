@@ -1,0 +1,85 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.redirect {
+    background-color: #FFCA49FF;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.redirect a {
+    text-decoration: none;
+    color: #275EF5;
+    padding: .5rem 1rem;
+}
+
+.redirect:hover,
+.redirect:active {
+    background-color: #FFCA49AA;
+}
+
+redirect:hover a,
+.redirect:active a {
+    color: #618bff;
+}
+
+.teacher_posts {
+    margin: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    max-width: 1200px;
+}
+
+.teacher_posts h1 {
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+article {
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 4vh;
+}
+
+.post_tittle {
+    margin-top: 2vh;
+}
+
+.post_content {
+    text-align: justify;
+}
+
+.post_date {
+    margin-top: .8rem;
+    margin-bottom: .3rem;
+}
+
+.pagination {
+    margin-bottom: 2vh;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #275EF5;
+}
+
+@media (min-width: 1366px) {
+    .post_tittle {
+        margin-top: 3vh;
+    }
+
+    .post_date {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+    }
+}

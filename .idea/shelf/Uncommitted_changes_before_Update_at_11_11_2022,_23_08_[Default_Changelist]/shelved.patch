@@ -1,0 +1,63 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"7fb91450-5ede-42d5-ab09-294b843e9490\" name=\"Default Changelist\" comment=\"responisve footer 2\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/db.sqlite3\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/db.sqlite3\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/templates/addtask.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/templates/addtask.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/templates/assigntask.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/templates/assigntask.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/templates/students_list.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/templates/students_list.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/templates/teacher.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/templates/teacher.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/urls.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/urls.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/members/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/members/views.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n        <option value=\"HTML File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"ProjectId\" id=\"2G5svB13lMDAZ0LNrfCByzuLZiL\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"run.code.analysis.last.selected.profile\" value=\"pProject Default\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.lookFeel\" />\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"App4Tutor\" type=\"Python.DjangoServer\" factoryName=\"Django server\">\n      <module name=\"App4Tutor\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n        <env name=\"DJANGO_SETTINGS_MODULE\" value=\"App4Tutor.settings\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\n      <option name=\"port\" value=\"8000\" />\n      <option name=\"host\" value=\"\" />\n      <option name=\"additionalOptions\" value=\"\" />\n      <option name=\"browserUrl\" value=\"\" />\n      <option name=\"runTestServer\" value=\"false\" />\n      <option name=\"runNoReload\" value=\"false\" />\n      <option name=\"useCustomRunCommand\" value=\"false\" />\n      <option name=\"customRunCommand\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"7fb91450-5ede-42d5-ab09-294b843e9490\" name=\"Default Changelist\" comment=\"\" />\n      <created>1665690007063</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1665690007063</updated>\n      <workItem from=\"1665690029583\" duration=\"704000\" />\n      <workItem from=\"1666110331555\" duration=\"88000\" />\n      <workItem from=\"1666110512731\" duration=\"7154000\" />\n      <workItem from=\"1666180784027\" duration=\"8699000\" />\n      <workItem from=\"1666261671161\" duration=\"3699000\" />\n      <workItem from=\"1666434223413\" duration=\"16717000\" />\n      <workItem from=\"1666535520367\" duration=\"4155000\" />\n      <workItem from=\"1666711258168\" duration=\"961000\" />\n      <workItem from=\"1666813978131\" duration=\"1519000\" />\n      <workItem from=\"1666816325623\" duration=\"396000\" />\n      <workItem from=\"1667125586632\" duration=\"4406000\" />\n      <workItem from=\"1667660086624\" duration=\"7485000\" />\n      <workItem from=\"1667758152463\" duration=\"4194000\" />\n      <workItem from=\"1667769504104\" duration=\"5539000\" />\n      <workItem from=\"1667815295283\" duration=\"3633000\" />\n      <workItem from=\"1667843925143\" duration=\"10045000\" />\n      <workItem from=\"1667910057721\" duration=\"7158000\" />\n      <workItem from=\"1667938731219\" duration=\"2621000\" />\n      <workItem from=\"1667979130792\" duration=\"842000\" />\n      <workItem from=\"1667994331640\" duration=\"11799000\" />\n      <workItem from=\"1668027193396\" duration=\"7045000\" />\n      <workItem from=\"1668099922874\" duration=\"6506000\" />\n      <workItem from=\"1668167540883\" duration=\"20125000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"responisve footer 2\">\n      <created>1668167775186</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1668167775186</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"responisve footer 2\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"responisve footer 2\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9c2355546102c076d0da0d4a9b938ed4e966f2bf)
++++ b/.idea/workspace.xml	(date 1668204417595)
+@@ -1,16 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="7fb91450-5ede-42d5-ab09-294b843e9490" name="Default Changelist" comment="responisve footer 2">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/templates/addtask.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/addtask.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/templates/assigntask.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/assigntask.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/templates/students_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/students_list.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/templates/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/teacher.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/urls.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/members/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/views.py" afterDir="false" />
+-    </list>
++    <list default="true" id="7fb91450-5ede-42d5-ab09-294b843e9490" name="Default Changelist" comment="some teacher features added" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -108,7 +99,7 @@
+       <workItem from="1667994331640" duration="11799000" />
+       <workItem from="1668027193396" duration="7045000" />
+       <workItem from="1668099922874" duration="6506000" />
+-      <workItem from="1668167540883" duration="20125000" />
++      <workItem from="1668167540883" duration="20431000" />
+     </task>
+     <task id="LOCAL-00001" summary="responisve footer 2">
+       <created>1668167775186</created>
+@@ -117,7 +108,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1668167775186</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="some teacher features added">
++      <created>1668204148013</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1668204148013</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -137,6 +135,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="responisve footer 2" />
+-    <option name="LAST_COMMIT_MESSAGE" value="responisve footer 2" />
++    <MESSAGE value="some teacher features added" />
++    <option name="LAST_COMMIT_MESSAGE" value="some teacher features added" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/create_group.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="create_group">
+    <h1>Stwórz grupę</h1>
+    <form action="savegroup/" method="post">
+        {% csrf_token %}
+        <label>Nazwa grupy:</label>
+        <input name="group_name" required/>
+        <label>Wybierz studentów przytrzymując shift</label>
+    <div class="select_students">
+    <div>
+            <select multiple="multiple" id="select1" >
+                {% for s in students %}
+                        <option value="{{ s.id }}"> {{ s.user.first_name }} {{ s.user.last_name }}</option>
+                    {% endfor %}
+            </select>
+
+            <button id="add">Wybierz ucznia</button>
+</div>
+    <div>
+            <select multiple="multiple" id="select2" name="selected_students"></select>
+            <button id="remove">Cofnij</button>
+    </div>
+                </div>
+        <button type="submit">Dodaj uczniów</button>
+    </form>
+</div>
+
+    <script>
+    $('#add').click(function () {
+  $('#select1 option:selected').each(function (el) {
+    $(this).appendTo('#select2');
+  });
+});
+
+$('#remove').click(function () {
+  $('#select2 option:selected').each(function (el) {
+    $(this).appendTo('#select1');
+  });
+});
+
+    </script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/group_rank.css" %}"/>
+{% endblock %}
+
+{%block content%}
+<div class="container podium">
+    {% for key, value in wyniki.items %}
+        <div class="podium__item">
+            <p class="podium__student">{{ key }}</p>
+            <div class="podium__rank">{{ value}}</div>
+        </div>
+    {% endfor %}
+</div>
+{%endblock content%}

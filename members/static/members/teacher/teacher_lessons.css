@@ -1,0 +1,104 @@
+.lessons_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 0;
+    overflow: auto;
+}
+
+.students_lessons,
+.group_students_lessons {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
+    gap: 10px 10px;
+    width: 70%;
+}
+
+.students_lessons {
+    margin: 5vh auto 2vh;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 0 2vh;
+    border: 2px solid black;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.card p {
+    text-align: center;
+}
+
+.calendar_card__month {
+    background-color: #4299e1;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.calendar_card__month p {
+    color: white;
+    font-weight: bold;
+    padding: 1vh 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card__day {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card__weekday {
+    font-size: 1.3rem;
+}
+
+.card__time {
+    margin-top: 1vh;
+    font-size: 1rem;
+}
+
+.card__student,
+.card__group {
+    font-weight: bold;
+}
+
+.calendar_card {
+    background-color: white;
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    .students_lessons,
+    .group_students_lessons {
+        width: 55%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lessons_container {
+        flex-direction: row;
+    }
+
+    .students_lessons,
+    .group_students_lessons {
+        align-self: start;
+        overflow: visible;
+        width: 40vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px 20px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .students_lessons,
+    .group_students_lessons {
+        width: 40vw;
+    }
+}

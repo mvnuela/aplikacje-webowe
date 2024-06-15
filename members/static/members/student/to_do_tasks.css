@@ -1,0 +1,104 @@
+.to_do_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.to_do_container h2 {
+    text-align: center;
+    margin: 4vh 0;
+}
+
+.lessons_container {
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.task_tile {
+    background-color: #ffdc87;
+    width: 40vw;
+    height: 40vw;
+    box-shadow: 6px 6px 13px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: .3s;
+}
+
+.task_tile:hover {
+    transform: scale(1.1);
+}
+
+.task_tile__name {
+    color: #0e0d0d;
+    margin-top: 8vw;
+    font-weight: bold;
+}
+
+.task_tile__link {
+    margin-top: 8vw;
+}
+
+.task_tile__link a {
+    color: #0c0c0c;
+    font-weight: bold;
+}
+
+.pagination {
+    margin: 5vh auto;
+}
+
+@media (min-width: 450px) {
+    .task_tile {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .task_tile__name,
+     .task_tile__link{
+        margin-top: 5vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .task_tile {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .task_tile__name,
+     .task_tile__link{
+        margin-top: 3vw;
+        font-size: 1.1rem
+    }
+}
+
+@media (min-width: 1024px) {
+    .task_tile {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .lessons_container {
+        gap: 3vw;
+    }
+}
+
+@media (min-width: 1366px) {
+    .task_tile {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .task_tile__name,
+     .task_tile__link{
+        margin-top: 2vw;
+        font-size: 1.2rem
+    }
+}
+
+

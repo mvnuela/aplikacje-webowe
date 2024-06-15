@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/teacher.css" %}"/>
+{% endblock %}
+{% block content %}
+<div class="teacher_posts">
+    <h1>Informacje od nauczyciela</h1>
+    {% for post in page_obj %}
+        <article>
+            <h2 class="post_tittle">{{ post.title }}</h2>
+            <p class="post_date"> {{ post.timestamp }}</p>
+            <p class="post_content"> {{ post.content }}</p>
+        </article>
+    {% empty %}
+        <p><a href=""> Dodaj wpis </a></p>
+    {% endfor %}
+</div>
+    {% include 'pagination.html' %}
+
+{% endblock %}

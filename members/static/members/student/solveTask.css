@@ -1,0 +1,159 @@
+.file-droppable {
+  background: #d9d5ec;
+  border: dashed 2px #5b537d;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 1s;
+  min-height: 70px;
+  position: relative;
+  margin-bottom: 2vh;
+  width: 120%;
+}
+
+.file-droppable.filled {
+  background: #c5dfdc;
+  border: solid 2px #6faca5;
+  border-radius: 5px;
+}
+
+.file-droppable.error {
+    background: #dc3545;
+  border: solid 2px #e22033;
+  border-radius: 5px;
+}
+
+.file-droppable:after {
+  position: absolute;
+  left: 13px;
+  top: 38px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.file-droppable::before {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+
+.file-droppable div {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.file-droppable span {
+  position: absolute;
+  font-weight: bold;
+  right: 5px;
+  top: -5px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+
+.file-droppable input {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.solve_task {
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.solve_task form textarea {
+    resize: none;
+    height: 15vh;
+}
+
+.solve_task h2 {
+    margin-top: 1rem;
+}
+
+.solve_task .task_content {
+    margin-top: 2vh;
+    text-align: justify;
+}
+
+.solve_task form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vh 10vw;
+}
+
+.solve_task form label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.solve_task form input,
+.solve_task form textarea,
+.solve_task form select {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.solve_task form input:focus,
+.solve_task form textarea:focus,
+.solve_task form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+.solve_task form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.solve_task form button:hover,
+.solve_task form button.active {
+    background-color: #28a74599;
+}
+
+@media (min-width: 1024px) {
+    .solve_task form input,
+    .solve_task form textarea,
+    .solve_task form select {
+        width: 150%;
+    }
+
+    .file-droppable {
+        width: 150%;
+    }
+}

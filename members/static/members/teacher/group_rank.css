@@ -1,0 +1,74 @@
+.podium__item {
+  width: 200px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  margin: 5vh auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.podium__rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: #fff;
+}
+
+.podium__student {
+  text-align: center;
+  padding: 0 .5rem;
+  transform: translate(0, -100%);
+}
+
+.podium__number {
+  width: 27px;
+  height: 75px;
+}
+
+.podium__item:nth-of-type(1) {
+  min-height: 300px;
+  background: rgb(255,172,37);
+background:
+  linear-gradient(333deg,
+  rgba(255,172,37,1) 0%,
+  rgba(254,207,51,1) 13%,
+  rgba(254,224,51,1) 53%,
+  rgba(255,172,37,1) 100%);
+  order: 2;
+}
+
+.podium__item:nth-of-type(2) {
+  min-height: 200px;
+  background: blue;
+  order: 1;
+}
+
+.podium__item:nth-of-type(3) {
+  min-height: 100px;
+  background: green;
+  order: 3;
+}
+
+.podium__item:nth-of-type(4) {
+    margin-top: 5vh;
+}
+
+.podium__item:nth-of-type(n+5) {
+    margin-top: 3vh;
+}
+
+.podium__item:nth-of-type(n+4) {
+    width: 100%;
+    order: 4;
+    text-align: center;
+}
+
+.podium__item:nth-of-type(n+4) .podium__rank {
+    display: inline-block;
+    color: black;
+    font-size: 20px;
+}

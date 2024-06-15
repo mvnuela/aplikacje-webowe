@@ -1,0 +1,164 @@
+.main {
+    background-color: #fff8e5;
+}
+
+.login_container {
+    padding: 10vh 0;
+}
+
+.login_container__welcome {
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+.span--bold {
+    font-weight: bold;
+}
+
+.login_container__offer {
+    margin: 1rem 0
+}
+
+.span--color-secondary {
+    color: #275EF5;
+}
+
+.login_container__facilities {
+    margin: .8rem 0;
+}
+
+.login_container__facilities li {
+    margin: .2rem 0 0 1rem;
+}
+
+form,
+.logout-redirect{
+    text-align: center;
+    margin: 2rem auto;
+    width: 85%;
+    border: 1px solid black;
+    box-shadow: 0 0 6px black;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2ead3;
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+.logout-redirect {
+    flex-direction: row;
+}
+
+.logout-redirect a {
+    margin-left: 3px;
+}
+
+form .form__title {
+    margin: 1rem 0 2rem;
+    font-weight: bold;
+}
+
+form p {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+form p label {
+    display: block;
+    margin-bottom: 1vh;
+}
+
+form p input {
+    padding: .3rem 0 .3rem .3rem
+}
+
+form button {
+    padding: .5rem 1.2rem;
+    background-color: #FFCA49FF;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+form button:hover,
+form button.active {
+    box-shadow: 0 0 6px black;
+}
+
+.form__agreement {
+    margin: 1rem 0;
+    color: #aaa;
+    font-weight: normal;
+}
+
+.form__agreement a {
+    color: #aaa;
+}
+
+.errorlist {
+    list-style: none
+}
+
+.errorlist li {
+    color: #dc3545;
+    margin: .5rem 0;
+}
+
+@media (min-width: 768px) {
+    .login_container__welcome {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+    }
+
+    .login_container {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin: 0 auto;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .logout-redirect {
+        flex-basis: 35%;
+    }
+
+     .login_container__welcome {
+        flex-basis: 55%;
+    }
+
+    form {
+        min-height: 40vh;
+        padding: 1rem;
+        flex-basis: 35%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .login_container {
+        max-width: 1300px;
+    }
+
+     .login_container__welcome {
+        flex-basis: 35%;
+    }
+
+    form {
+        flex-basis: 30%;
+    }
+
+    .login_container__welcome {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/incomming_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="lessons_container">
+    <div class="students_lessons">
+        {% if page_obj %}
+        <table>
+            <thead>
+               <tr>
+                    <th>Data</th>
+                    <th>Czas</th>
+                     <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in page_obj %}
+                    <tr>
+                        <td>{{ s.date }}</td>
+                        <td>{{ s.time }}</td>
+                        {% if s.date >= deadline and is_individual %}
+                            <td><a href="/cancellesson/{{ s.id }}/">Odwołaj</a></td>
+                        {% elif is_individual and s.payment_status %}
+                            <td class="payment--success">Opłacono</td>
+                        {% elif is_individual and s.payment_status is False %}
+                            <td class="payment--danger">Do zapłaty {{ student.lesson_price }}zł</td>
+                        {% elif is_individual is False and s.id not in paid_group_lessons %}
+                            <td class="payment--danger"> Do zapłaty: {{ student.lesson_price }}zł</td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       {% include 'pagination.html' %}
+        {% else %}
+            <h2>Brak lekcji</h2>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

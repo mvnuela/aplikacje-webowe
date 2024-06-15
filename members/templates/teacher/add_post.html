@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/add_post.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="add_post_container">
+    <h1>Dodaj post</h1>
+    <form action="savepost/" method="post">
+    {% csrf_token %}
+        <label>Tytuł wpisu:</label>
+    <input name="post-title" type='text'/>
+    <label>Zawartość:</label>
+        <textarea name='post-content' type='text'></textarea>
+        <button type="submit">Dodaj wpis</button>
+    </form>
+</div>
+{% endblock %}

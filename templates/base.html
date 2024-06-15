@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "index.css" %}"/>
+    <link rel="stylesheet" href="{% static "footer.css" %}"/>
+    <link rel="stylesheet" href="{% static "aside_menu.css" %}"/>
+    <link rel="stylesheet" href="{% static "header.css" %}"/>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    {% block css_files %}{% endblock %}
+</head>
+
+<body>
+<div class="backdrop"></div>
+<aside class="side-drawer">
+    <a><i class="fa fa-times" onclick="toggle_menu()"></i></a>
+    <ul class="nav-links">
+        <li><a href="/login/teacher/listoftask/">Zadania </a></li>
+        <li><a href="/login/teacher/addtask/">Dodaj zadanie</a></li>
+        <li class="dropdown-aside">
+            <a class="dropbtn-aside">Lekcje<i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-aside-content">
+                <a href="/login/teacher/lessons/">Najbliższe lekcje</a>
+                <a href="/login/teacher/allindividuallessons/">Lekcje indywidualne</a>
+                <a href="/login/teacher/allgrouplessons/">Lekcje grupowe</a>
+                <a href="/login/teacher/addlesson/">Dodaj lekcję indywidualna</a>
+                <a href="/login/teacher/addgrouplesson/">Dodaj lekcję grupową</a>
+            </div>
+        </li>
+        <li><a href="/login/teacher/students/">Uczniowie</a></li>
+        <li><a href="/login/teacher/creategroup/">Utwórz grupę</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="/logout">Wyloguj się</a></li>
+        {% endif %}
+    </ul>
+</aside>
+
+<header class="main-header">
+    <button
+            class="main-navigation__menu-btn"
+            onclick="toggle_menu()"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    {% if "Teacher" in request.user.groups.all.0.name %}
+        <a href="/login/teacher">
+            <img class="logo" src="{% static "/images/logo.png" %}" alt='logo'/>
+        </a>
+    {% elif "Student" in request.user.groups.all.0.name %}
+        <a href="/login/student">
+            <img class="logo" src="{% static "/images/logo.png" %}" alt='logo'/>
+        </a>
+    {% elif "Parent" in request.user.groups.all.0.name %}
+        <a href="/login/parent">
+            <img class="logo" src="{% static "/images/logo.png" %}" alt='logo'/>
+        </a>
+    {% endif %}
+
+
+
+
+
+    <nav class="main-navigation__header-nav">
+        <ul class="nav-links">
+            {% if "Teacher" in request.user.groups.all.0.name %}
+                <li><a href="/login/teacher/listoftask/">Zadania</a></li>
+                <li><a href="/login/teacher/addtask/">Dodaj zadanie</a></li>
+
+            {% elif "Student" in request.user.groups.all.0.name %}
+                <li><a href="/login/student/lessons/">Moje lekcje</a></li>
+                <li><a href="/login/student/progress/">Moje postępy</a></li>
+                <li class="dropdown">
+                    <a class="dropbtn">Zadania<i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/login/student/taskstodo/">Do zrobienia</a>
+                        <a href="/login/student/donetasks/">Rozwiązane</a>
+                    </div>
+                </li>
+
+            {% endif %}
+            {% if "Teacher" in request.user.groups.all.0.name %}
+                <li class="dropdown">
+                    <a class="dropbtn">Lekcje<i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/login/teacher/lessons/">Najbliższe lekcje</a>
+                        <a href="/login/teacher/allindividuallessons/">Lekcje indywidualne</a>
+                        <a href="/login/teacher/allgrouplessons/">Lekcje grupowe</a>
+                        <a href="/login/teacher/addlesson/">Dodaj lekcję indywidualna</a>
+                        <a href="/login/teacher/addgrouplesson/">Dodaj lekcję grupową</a>
+                    </div>
+                </li>
+                <li><a href="/login/teacher/students/">Uczniowie</a></li>
+                <li><a href="/login/teacher/creategroup/">Utwórz grupę</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <li><a href="/change-password/">Zmień hasło</a></li>
+                <li><a href="/logout">Wyloguj się</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    <div class="footer__about">
+        <h3>O nas</h3>
+        <div>
+            <a href="#">O aplikacji</a>
+            <a href="#">Praca</a>
+            <a href="#">Warunki użytkownia</a>
+            <a href="#">Polityka prywatności</a>
+            <a href="#">Zgody</a>
+            <a href="#">Rekrutacja developerów</a>
+            <a href="#">Nasza kadra</a>
+        </div>
+    </div>
+    <div class="footer__journey">
+        <div class="footer__journey--center">
+            <h3>Dołącz do przygody</h3>
+            <a href="#">Dostęp do aplikacji</a>
+        </div>
+        <div class="footer__journey--center">
+            <h3>Pomoc</h3>
+            <a href="#">Potrzebujesz pomocy?</a>
+            <a href="#">Kontakt</a>
+        </div>
+    </div>
+    <div class="footer__social">
+        <h3>Social</h3>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook-square"></i></a>
+        <a href="#"><i class="fa fa-snapchat-square"></i></a>
+    </div>
+    <div class="footer__copyrights">
+        <p>&copy; AppTutor 2022. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    const sideDrawer = document.querySelector('.side-drawer');
+    const backdrop = document.querySelector('.backdrop');
+
+    backdrop.addEventListener('click', toggle_menu);
+
+    function toggle_menu(e) {
+        console.log(e);
+        sideDrawer.classList.toggle("slide-in-left");
+        backdrop.classList.toggle("active");
+    }
+
+    const dropdownBtn = document.querySelector('.dropbtn-aside');
+    const dropdownContent = document.querySelector('.dropdown-aside-content');
+
+    dropdownBtn.addEventListener('click', toggle_dropdown);
+
+    function toggle_dropdown() {
+        dropdownContent.classList.toggle("active");
+    }
+
+    {% block script %}
+    {% endblock %}
+</script>
+</body>
+</html>

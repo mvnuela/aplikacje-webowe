@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/student_assigned_to_task.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+<button class="previous_page"><a href="/login/teacher/">Powrót</a></button>
+<div class="overflow--scroll">
+    <div class="task_table">
+        {% if students%}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uczeń</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for s in students %}
+                            <tr>
+                                <td class="student"> {{s.student.user.first_name}} {{s.student.user.last_name}}</td>
+                                <td class="assignment_status">
+                                    {% if s.score != -1 %}
+                                     Ocena wynosi:
+                                        <a href="/rozwiazanie/{{task_id}}/{{s.student.id}}/">{{s.score}}<a/>
+                                    {%elif s.text_answer%}
+                                        <a href="/rozwiazanie/{{task_id}}/{{s.student.id}}/">Oceń rozwiązanie</a>
+                                    {% else %}
+                                        Nie przesłano rozwiązania
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+        {% else %}
+            <p class="no_assignment">Nie przypisano jeszcze zadania żadnemu uczniowi!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

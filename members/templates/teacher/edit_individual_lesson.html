@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/add_lesson.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="add_lesson_container">
+    {% if wrong %}
+        <h2 class="add_lesson_container__title">Nie możesz dodać lekcji z przeszłości</h2>
+    {% else %}
+        <h2 class="add_lesson_container__title">Edytuj lekcję</h2>
+    {% endif %}
+    <form action="/saveeditedlesson/{{ lesson_id }}/" method="post">
+        {% csrf_token %}
+        <label>Data:</label>
+        <input name="l-date" type="date" min="{{ today }}" required/>
+        <label>Godzina:</label>
+        <input type="time" id="appt" name="appt" required/>
+        <div class="form_buttons">
+            <button type="submit">Zapisz</button>
+            <button class="delete_lesson"> <a href="/deletelesson/{{ lesson_id}}">USUŃ</a> </button>
+        </div>
+    </form>
+
+
+</div>
+{% endblock %}

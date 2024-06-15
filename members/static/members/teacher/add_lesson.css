@@ -1,0 +1,97 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_lesson_container {
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add_lesson_container__title {
+    margin-top: 2vh;
+}
+
+.add_lesson_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh 15vw;
+}
+
+.add_lesson_container  form label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.add_lesson_container  form input,
+.add_lesson_container  form textarea,
+.add_lesson_container  form select {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.add_lesson_container  form input:focus,
+.add_lesson_container  form textarea:focus,
+.add_lesson_container  form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+.add_lesson_container form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 45%;
+}
+
+.form_buttons {
+    width: 150%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add_lesson_container form .delete_lesson {
+    background-color: #dc3545;
+}
+
+.delete_lesson a {
+    text-decoration: none;
+    color: black;
+}
+
+.add_lesson_container form .delete_lesson:hover,
+.add_lesson_container form .delete_lesson.active {
+    background-color: #dc3545aa;
+}
+
+.add_lesson_container form button:hover,
+.add_lesson_container form button.active {
+    background-color: #28a74599;
+}
+
+@media (min-width: 1024px) {
+    .add_lesson_container form input,
+    .add_lesson_container form textarea,
+    .add_lesson_container form select {
+        width: 200%;
+    }
+}

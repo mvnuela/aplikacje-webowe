@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/student/to_do_tasks.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="to_do_container">
+
+    {% if tasks %}
+        <h2>Zadania do zrobienia</h2>
+        <div class="lessons_container">
+            {% for t in tasks%}
+                <div class="task_tile">
+                    <p class="task_tile__name">{{ t.task.name }}</p>
+                    <p class="task_tile__link"><a href="/solvetask/{{ t.id }}"> Rozwiąż zadanie </a></p>
+                </div>
+            {% endfor %}
+        </div>
+{#    {% include 'pagination.html' %}#}
+    {% else %}
+        <h2>Brak przypisanych zadań</h2>
+    {% endif %}
+</div>
+<script>
+ function generateLightColorHex() {
+  let color = "#";
+  for (let i = 0; i < 3; i++)
+    color += ("0" + Math.floor(((1 + Math.random()) * Math.pow(16, 2)) / 2).toString(16)).slice(-2);
+  return color;
+}
+
+function setRandomColor() {
+  const allTiles = document.querySelectorAll('.task_tile');
+  for (const tile of allTiles) {
+    tile.style.backgroundColor = generateLightColorHex();
+  }
+}
+setRandomColor()
+</script>
+
+{% endblock %}
+

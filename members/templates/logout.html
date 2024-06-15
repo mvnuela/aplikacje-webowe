@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/logout.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <div class="logout">
+            <form method='POST'>{% csrf_token %}
+                <p class="form-logout__question">Czy na pewno chcesz się wylogować?</p>
+                <button type='submit'>Wyloguj</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="logout">
+            <p class="login-redirect">Jesteś niezalogowany, możę chciał/abyś <a href='/login/'>zalogować się</a>?</p>
+        </div>
+    {% endif %}
+{% endblock %}

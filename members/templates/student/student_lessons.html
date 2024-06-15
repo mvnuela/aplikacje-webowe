@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/incomming_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="lessons_container">
+    <div class="students_lessons">
+        {% if page_obj %}
+        <h2>Moje lekcje</h2>
+        <table>
+            <thead>
+               <tr>
+                    <th> Data</th>
+                    <th> Czas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in page_obj %}
+                    <tr>
+                        <td>{{ s.date }}</td>
+                        <td>{{ s.time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       {% include 'pagination.html' %}
+        {% else %}
+            <p>Nie masz lekcji</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

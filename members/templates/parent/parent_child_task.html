@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/parent/parent_view.css" %}"/>
+{% endblock %}
+
+{% block content %}
+{% if tasks%}
+    <div class="overflow--scroll">
+        <div class="task_table">
+            <table>
+              <thead>
+                <tr>
+                    <th>Zadanie do wykonania</th>
+                    <th> Fragment </th>
+                </tr>
+              </thead>
+                <tbody>
+                {% for t in tasks%}
+                    <tr>
+                        <td class="task_to_do__name">{{ t.task.name }}</td>
+                        <td class="task_to_do__content">{{ t.task.task_content|slice:"0:100" }} </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <p class="no_assignment">Brak zadań</p>
+{% endif %}
+{% endblock %}

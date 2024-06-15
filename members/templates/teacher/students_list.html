@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/students_list.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="student_list_container">
+    <div class="students_list">
+        <h2>Uczniowie:</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Uczeń</th>
+                <th>Rodzic</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for s in students%}
+                    <tr>
+                        <td><a href="/assigntask/{{ s.id }}/">{{ s.user.first_name }} {{ s.user.last_name }}</a></td>
+                        {% if s.parent %}
+                            <td>{{ s.parent.user.first_name }} {{ s.parent.user.last_name }}</td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="group_students_list">
+        <h2>Uczniowie grupowi:</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Grupa</th>
+                <th>Uczniowie</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for g in groups %}
+                <tr>
+                    <td>
+                        <a href="/assigngrouptask/{{ g.id }}"> {{ g.name }} </a>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for i in g.group_members.all %}
+                                <li>{{ i.student.user.first_name }} {{ i.student.user.last_name }}</li>
+                            {% empty %}
+                                Brak przypisanych uczniów
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="/statistic/{{ g.id }}/">Statystyki</a>
+                    </td>
+                    <td>
+                        <a href="/ranking/{{ g.id }}/">Ranking</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="previous_page"> <a href="/login/teacher/">Powrót</a> </button>
+
+{% endblock %}

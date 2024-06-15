@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load l10n%}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/incomming_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="group_students_lessons group_students_lessons--center">
+        {% if page_obj %}
+        <h2>Lekcje grupowe</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th> Data</th>
+                    <th> Czas</th>
+                    <th> Uczeń</th>
+                    <th> Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in page_obj %}
+                    <tr>
+                    {% if s.date < today %}
+                        <td>{{ s.date }}</td>
+                    {% else %}
+                        <td><a href="/editgrouplesson/{{ s.id }}" name="EDYTUJ">{{ s.date }}</a></td>
+                    {% endif %}
+                        <td>{{ s.time}}</td>
+                        <td>{{ s.group_id.name }}</td>
+                        <td><a href="/payment-list/{{ s.id }}/">Lista wpłat</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'pagination.html' %}
+        {% else %}
+            <p>Nie masz lekcji</p>
+        {% endif %}
+</div>
+
+{% endblock %}

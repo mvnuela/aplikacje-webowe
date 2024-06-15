@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/incomming_lessons.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+    <div class="lessons_container">
+    <div class="students_lessons">
+    {% if page_obj %}
+        <h2> Wykonane zadania </h2>
+        <table>
+        <thead>
+             <tr>
+                <th>Zadanie</th>
+                <th>Ocena</th>
+                 <th>Max</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in page_obj %}
+                <tr>
+                <td>{{ t.task.name }}</td>
+                    {% if t.score != -1 %}
+                        <td>
+                            {% for i in 'x'|rjust:t.score %}
+                                <i class="fa fa-star">
+                            {% endfor %}
+                        </td>
+                    {% else %}
+
+                        <td><a href="/solvetask/{{ t.id }}">Prześlij ponownie.</a></td>
+                    {% endif %}
+                <td>{{ t.task.max_points }} <i class="fa fa-star"> </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+        </table>
+        {% include 'pagination.html' %}
+        {% else %}
+        <h1>NIE ROZWIĄZANO JESZCZE ŻADNYCH ZADAŃ</h1>
+    {% endif %}
+    </div>
+    </div>
+
+{% endblock %}

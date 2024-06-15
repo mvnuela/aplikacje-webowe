@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/incomming_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="lessons_container">
+    <div class="students_lessons">
+        {% if page_obj%}
+        <h2>Lekcje indywidualne</h2>
+        <table>
+            <thead>
+               <tr>
+                    <th> Data</th>
+                    <th> Czas</th>
+                    <th> Uczeń</th>
+                    <th> Status </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in page_obj %}
+                    <tr>
+                        {% if s.date < today %}
+                            <td>{{ s.date }}</td>
+                        {% else %}
+                            <td> <a href = "/editlesson/{{s.id}}" title="EDYTUJ"> {{ s.date }}</a></td>
+                        {% endif %}
+                        <td>{{ s.time }}</td>
+                        <td>{{ s.student.user.first_name }} {{ s.student.user.last_name }}</td>
+                        {% if s.payment_status %}
+                            <td> Opłacona </td> {# dodac to jako ptaszka #}
+                         {% else %}
+                            <td><a href="/lessonpaid/{{ s.id }}/" title="Oznacz jako opłacone"> Nieopłacona </a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>Nie masz lekcji</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

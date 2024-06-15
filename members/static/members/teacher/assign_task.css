@@ -1,0 +1,60 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.assign_task_container {
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 3vh 5vw;
+}
+
+.assign_task_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.assign_task_container form select {
+    margin: 3vh auto 0;
+    width: 40vw;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.assign_task_container form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+
+.assign_task_container form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.assign_task_container form button:hover,
+.assign_task_container form button.active {
+    background-color: #28a74599;
+}
+
+@media (min-width: 568px) {
+    .assign_task_container form select {
+        width: 200px;
+    }
+}

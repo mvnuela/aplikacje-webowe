@@ -1,0 +1,91 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout {
+    padding: 10vh 0;
+}
+
+.logout form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 6px black;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 200px;
+}
+
+.logout .login-redirect {
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    width: 80vw;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.logout .login-redirect a {
+    margin-left: 3px;
+    color: #275EF5;
+    text-decoration: none;
+}
+
+
+form .form-logout__question {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form button {
+    width: 50%;
+    background-color: #dc3545;
+    border: 0px;
+    padding: .4rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover,
+form button.active {
+    background-color: #EC4420;
+}
+
+@media (min-width: 568px) {
+    .logout form {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logout .login-redirect {
+        font-size: 1.2rem;
+    }
+
+    form .form-logout__question {
+        font-size: 1.2rem;
+    }
+
+    form button {
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 1366px) {
+    .logout form {
+        height: 300px;
+    }
+}

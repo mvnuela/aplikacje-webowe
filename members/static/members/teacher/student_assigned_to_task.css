@@ -1,0 +1,90 @@
+.previous_page {
+    position: absolute;
+    top: 12vh;
+    left: 5vw;
+    background-color: #FFCA49FF;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+}
+
+.previous_page a {
+    text-decoration: none;
+    color: #275EF5;
+    padding: .5rem 1rem;
+}
+
+.previous_page:hover,
+.previous_page.active {
+    background-color: #FFCA49aa;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overflow--scroll {
+    overflow: auto;
+}
+
+.task_table {
+    margin: 10vh 5vw;
+    max-width: 1300px;
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 20px 20px 20px 5px #ab811c;
+  background-color: white;
+  text-align: left;
+  padding: 0 5vw;
+  border-bottom: 20px solid #FFCA49FF;
+}
+
+th {
+    background-color: #FFCA49FF;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+
+td {
+    padding: 1rem 2rem;
+}
+
+tr:nth-child(even) {
+    background-color: #ffdc87;
+}
+
+tr td a {
+    text-decoration: none;
+    color: #275EF5;
+}
+
+tr:hover {
+    background-color: #a78126;
+}
+
+tr td a:hover,
+tr td a:active {
+    color: #618bff;
+}
+
+.student {
+    width: 15vw;
+}
+
+.assignment_status {
+    width: 20vw;
+}
+
+.no_assignment {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 6px black;
+    padding: 4vh 2vw;
+}

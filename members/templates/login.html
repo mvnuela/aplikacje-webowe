@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/login.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <div class="login_container">
+        <div class="login_container__welcome">
+            <h1 class="login_container__join-us">
+                Korepetytorze! Już dziś wykup dostęp do aplikacji i wyrzuć kalendarz!
+            </h1>
+            <h2 class="login_container__offer">Posiadamy bardzo bogatą ofertę <span class="span--color-secondary">5-15 zł za ucznia</span></h2>
+            <p>Zacznij korzystać z <span class="span--bold">aplikacji webowej</span>, dzięki której Twoja praca stanie się łatwiejsza</p>
+            <ul class="login_container__facilities">
+                <li>Kontroluj swój <span class="span--bold">harmonogram <span><i class="fa fa-calendar"></i></span> i stawki</span> <span><i class="fa fa-dollar"></i></span></li>
+                <li>Zarządzaj lekcjami prowadzonymi <span class="span--bold">grupowo i indywidualnie </span></li>
+                <li>Z łatowścią monitoruj <span class="span--bold">wyniki uczniów</span></li>
+            </ul>
+            <p><span class="span--bold">Skontakuj się z nami</span> i zobacz jakie to proste!</p>
+        </div>
+        {% if not request.user.is_authenticated %}
+            <form method='POST'>{% csrf_token %}
+                <p class="form__title">Logowanie</p>
+                {{ form.as_p }}
+                <button type='submit'>Zaloguj się</button>
+                <p class="form__agreement">Logując się wyrażasz zgodę na <a href="#">warunki ogólne</a></p>
+            </form>
+        {% else %}
+            <p class="logout-redirect">Jesteś już zalogowany, czy na pewno chcesz<a href='/logout/'>wylogować się</a>?</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

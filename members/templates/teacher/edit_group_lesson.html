@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/add_lesson.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="add_lesson_container">
+    {% if wrong %}
+        <h2 class="add_lesson_container__title">Nie możesz edytować lekcji z przeszłości</h2>
+    {% else %}
+        <h2 class="add_lesson_container__title">Edytuj lekcję grupową</h2>
+    {% endif %}
+    <form action="/saveeditedgrouplesson/{{ lesson_id }}/" method="post">
+    {% csrf_token %}
+    <label>Data:</label>
+    <input name="l-date" type="date" min="{{ today }}" required/>
+    <label>Godzina:</label>
+    <input type="time" id="appt" name="l-time" required/>
+        <div class="form_buttons">
+            <button type="submit">Zapisz</button>
+            <button class="delete_lesson"> <a href="/deletegrouplesson/{{ lesson_id }}">USUŃ</a> </button>
+        </div>
+    </form>
+
+
+</div>
+{% endblock %}

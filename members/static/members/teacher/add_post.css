@@ -1,0 +1,81 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_post_container {
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_post_container form textarea {
+    resize: none;
+    height: 15vh;
+}
+
+.add_post_container h1 {
+    margin-top: 1rem;
+}
+
+.add_post_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh 10vw;
+}
+
+.add_post_container form label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.add_post_container form input,
+.add_post_container form textarea,
+.add_post_container form select {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.add_post_container form input:focus,
+.add_post_container form textarea:focus,
+.add_post_container form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+.add_post_container form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add_post_container form button:hover,
+.add_post_container form button.active {
+    background-color: #28a74599;
+}
+
+@media (min-width: 1024px) {
+    .add_post_container form input,
+    .add_post_container form textarea,
+    .add_post_container form select {
+        width: 150%;
+    }
+}

@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/teacher_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="students_lessons">
+        {% for s in lessons %}
+             <div class="calendar_card">
+                <div class="calendar_card__month"><p>{{ s.date|date:"E"}}</p></div>
+                <div class="card">
+                    <p class="card__day">{{ s.date|date:"j"}}</p>
+                    <p class="card__weekday">{{ s.date|date:"l"}}</p>
+                    <p class="card__time">{{ s.time }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

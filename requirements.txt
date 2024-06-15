@@ -1,0 +1,5 @@
+Django==4.1.2
+chartjs
+django_extensions
+Pillow
+django-session-timeout

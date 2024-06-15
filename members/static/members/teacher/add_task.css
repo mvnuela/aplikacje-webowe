@@ -1,0 +1,81 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_task {
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add_task form textarea {
+    resize: none;
+    height: 15vh;
+}
+
+.add_task h1 {
+    margin-top: 1rem;
+}
+
+.add_task form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh 10vw;
+}
+
+.add_task form label {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.add_task form input,
+.add_task form textarea,
+.add_task form select {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.add_task form input:focus,
+.add_task form textarea:focus,
+.add_task form select:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #FFCA49FF;
+  box-shadow: 0 0 3px #FFCA49FF;
+}
+
+.add_task form button {
+    background-color: #28a745;
+    margin-top: 3vh;
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    border-size: 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add_task form button:hover,
+.add_task form button.active {
+    background-color: #28a74599;
+}
+
+@media (min-width: 1024px) {
+    .add_task form input,
+    .add_task form textarea,
+    .add_task form select {
+        width: 150%;
+    }
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/teacher_lessons.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="lessons_container">
+    {% if lessons %}
+    <div class="students_lessons">
+        {% for s in lessons %}
+             <div class="calendar_card">
+                <div class="calendar_card__month"><p>{{ s.date|date:"E"}}</p></div>
+                <div class="card">
+                    <p class="card__day">{{ s.date|date:"j"}}</p>
+                    <p class="card__weekday">{{ s.date|date:"l"}}</p>
+                    <p class="card__time">{{ s.time }}</p>
+                    <p class="card__student">{{ s.student.user.first_name }} {{ s.student.user.last_name }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if group_lessons %}
+    <div class="students_lessons">
+        {% for s in group_lessons %}
+            <div class="calendar_card">
+                <div class="calendar_card__month"><p>{{ s.date|date:"E"}}</p></div>
+                    <div class="card">
+                    <p class="card__day">{{ s.date|date:"j"}}</p>
+                    <p class="card__weekday">{{ s.date|date:"l"}}</p>
+                    <p class="card__time">{{ s.time }}</p>
+                    <p class="card__group">{{ s.group_id.name }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

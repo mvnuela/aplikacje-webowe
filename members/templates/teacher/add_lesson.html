@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/add_lesson.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="add_lesson_container">
+    <h2 class="add_lesson_container__title">Dodaj lekcje indywidualną</h2>
+    <form action="savelesson/" method="post">
+    {% csrf_token %}
+    <label>Data:</label>
+    <input name="l-date" type="date"/>
+    <label>Godzina:</label>
+    <input type="time" id="appt" name="appt" required>
+    <label>Uczeń:</label>
+    <select name="student">
+        {% for s in students %}
+            <option value={{s.id}}>{{ s.user.first_name }} {{ s.user.last_name }}</option>
+        {% endfor %}
+    </select>
+        <button type="submit">Dodaj lekcję</button>
+    </form>
+</div>
+{% endblock %}

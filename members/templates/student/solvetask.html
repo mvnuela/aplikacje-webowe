@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/student/solveTask.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="solve_task">
+    <h2>Task Content:</h2>
+    <p class="task_content">{{ task_content }}</p>
+    <form action="/savesolution/{{ id }}/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Prześlij plik</label>
+        <div class="file-droppable">
+          <div>Upuść plik tutaj!</div>
+          <span>&times;</span>
+          <input type="file" name="upload" />
+        </div>
+        <label>Komentarz do rozwiązania</label>
+        <textarea name="content"></textarea>
+        <button type="submit">Prześlij</button>
+    </form>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.file-droppable').forEach(function(droppable) {
+    var originalText = droppable.querySelector('div').innerHTML;
+    var input = droppable.querySelector('input');
+    var fileChanged = function() {
+      var files = input.files;
+      if (files.length) {
+      console.log(files[0].type);
+        if(!['image/png', 'image/jpeg'].includes(files[0].type)) {
+            droppable.classList.add('error');
+            droppable.querySelector('div').innerHTML = "Akceptowalne rozszerzenia plików: 'JPEG', 'jpg', 'png'";
+            return;
+        }
+
+        droppable.querySelector('span').style.display = 'block';
+        droppable.querySelector('div').innerHTML = '';
+				for (var i = 0; i < files.length; i++) {
+					droppable.querySelector('div').innerHTML += files[i].name + '<br>';
+        }
+        droppable.classList.add('filled');
+      } else {
+        droppable.querySelector('div').innerHTML = originalText;
+        droppable.classList.remove('filled');
+        droppable.querySelector('span').style.display = 'none';
+      }
+    };
+    input.addEventListener('change', fileChanged);
+    fileChanged(input);
+    droppable.querySelector('span').addEventListener('click', function() {
+		  input.value = '';
+	    fileChanged(input);
+    });
+  });
+});
+
+</script>
+
+{% endblock %}

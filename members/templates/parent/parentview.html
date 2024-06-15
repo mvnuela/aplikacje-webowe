@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/parent/parent_view.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+{% if children%}
+    <div class="overflow--scroll">
+        <div class="children_table">
+            <h2>Dzieci:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dziecko</th>
+                        <th>Pokaż lekcje</th>
+                        <th>Wyniki</th>
+                        <th>Zadania</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for child in children %}
+                        <tr>
+                            <td class="children_name"> {{ child.user.first_name }} {{ child.user.last_name }} </td>
+                            <td> <a href = '/childlessons/{{ child.id }}/'> Lekcje </a></td>
+                            <td> <a href = '/childresults/{{ child.id}}/'> Wyniki </a> </td> {# student id #}
+                            <td> <a href=" /childtodotasks/{{ child.id }}/"> Zadania do wykonania  </a> </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <p class="no_assignment">Brak przypisanych dzieci do konta!</p>
+{% endif %}
+{% endblock %}

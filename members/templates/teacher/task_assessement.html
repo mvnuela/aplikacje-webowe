@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/task_assessment.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="assessment_container" >
+        <h2>{{ task_content }}</h2>
+        <p>{{ answer }}</p>
+        <form  action= "/savegrade/{{ taskid }}/{{ studentid }}/" method="post">
+            {% csrf_token %}
+            <label>Ocena:</label>
+            <select name="ocena">
+                {% for i in max_points %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+
+            </select>
+            <button type="submit">Oceń</button>
+        </form>
+</div>
+{% if file  %}
+    <div class="solution_img_container">
+        <img src="{{ file.url }}" alt="Zdjecie rozwiazania" class="solution_img"/>
+    </div>
+    <button class="minimalize_solution">Powrót</button>
+{% endif %}
+
+<script>
+    const solutionImg = document.querySelector('.solution_img_container');
+    const minimalizeBtn = document.querySelector('.minimalize_solution');
+
+    solutionImg.addEventListener('click', () => {
+        solutionImg.classList.add("active");
+        minimalizeBtn.classList.add("active");
+    });
+
+    minimalizeBtn.addEventListener('click', () => {
+    console.log('dupa');
+        solutionImg.classList.remove("active");
+        minimalizeBtn.classList.remove("active");
+    });
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,117 @@
+.lessons_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh 0;
+    overflow: auto;
+}
+
+.students_lessons,
+.group_students_lessons {
+    text-align: center;
+    margin: 3vh 5vw 0;
+}
+
+.group_students_lessons .pagination {
+    text-align: center;
+    margin-top: 4vh;
+}
+
+.group_students_lessons.group_students_lessons--center {
+    margin: 10vh auto;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    text-align: left;
+    padding: 0 5vw;
+    border-bottom: 20px solid #FFCA49FF;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+th {
+    background-color: #FFCA49FF;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+tr:nth-child(even) {
+    background-color: #ffdc87;
+}
+
+tr td a {
+    text-decoration: none;
+    color: #275EF5;
+}
+
+tr:hover {
+    background-color: #a78126;
+}
+
+tr td a:hover,
+tr td a:active {
+    color: #618bff;
+}
+
+table tr td ul li {
+    list-style: square;
+    list-style-position: inside;
+}
+
+.pagination {
+    margin-top: 4vh;
+}
+
+.fa-star {
+    color: #a29426;
+}
+
+.payment--danger {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+payment--success {
+    color: #28a745;
+}
+
+@media (min-width: 1024px) {
+    .lessons_container {
+        flex-direction: row;
+    }
+
+    .students_lessons,
+    .group_students_lessons {
+        align-self: start;
+        overflow: visible;
+        margin: 5vh 2vw 10vh;
+        width: 40vw;
+    }
+
+    .students_lessons h2,
+    .group_students_lessons h2 {
+        margin-bottom: 2vh;
+    }
+
+    table {
+        width: 100%;
+        box-shadow: 20px 20px 20px 5px #ab811c;;
+    }
+}
+
+@media (min-width: 1366px) {
+    .students_lessons,
+    .group_students_lessons {
+        width: 40vw;
+    }
+}

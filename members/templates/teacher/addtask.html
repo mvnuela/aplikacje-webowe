@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/teacher/add_task.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="add_task">
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% else %}
+        <h1>Dodaj zadanie</h1>
+    {% endif %}
+
+    <form action="savetask/" method="post">
+        {% csrf_token %}
+        <label>Nazwa zadania:</label>
+        <input name="name" required>
+        <label>Opis zadania:</label>
+        <textarea name="content" required></textarea>
+        <label>Kategoria zadania:</label>
+        <select name="category">
+            <option value = "-1"> Brak</option>
+            {% for c in categories %}
+                <option value = {{ c.id }}>{{ c.name}} </option>
+            {% endfor %}
+        </select>
+        <label>Utwórz nową kategorie:</label>
+        <input name="new-category"  placeholder="Tu wpisz nową kategorie">
+        <label>Maksymalna ilość punktów:</label>
+        <input name="max-points" type="number" min="0">
+        <button type="submit">Dodaj</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+

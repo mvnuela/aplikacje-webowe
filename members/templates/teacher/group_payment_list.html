@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "members/parent/parent_view.css" %}"/>
+{% endblock %}
+
+{% block content %}
+
+{% if students%}
+    <div class="overflow--scroll">
+        <div class="children_table">
+            <h2>Brak opłat od:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Uczeń</th>
+                        <th>Lista</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in students %}
+                        <tr>
+                            <td class="children_name"> {{ s.user.first_name}} {{ s.user.last_name }} </td>
+                            <td> <a href = '/payment/{{ s.id }}/{{ lesson_id }}'> Dodaj wpłate </a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% else %}
+    <p class="no_assignment"> Lekcja opłacona w całości</p>
+{% endif %}
+{% endblock %}
